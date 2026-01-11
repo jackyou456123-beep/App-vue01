@@ -22,9 +22,9 @@
   <label for="exampleFormControlTextarea1" class="form-label">Detail</label>
   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
- <div class="mb-3 text-center">
-  <button type="button" class="btn btn-primary">Submit</button>
-  <button type="button" class="btn btn-danger">Cancel</button>
+<div class="mb-3 text-center">
+  <button type="button" class="btn btn-primary me-2">Submit</button>
+  <button type="button" class="btn btn-danger">Cancle</button>
 
   </div>
 
