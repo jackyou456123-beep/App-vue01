@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2026 at 12:10 PM
+-- Generation Time: Jan 18, 2026 at 12:34 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `customer_id` int(11) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `firstName`, `lastName`, `phone`, `username`, `password`) VALUES
+(1, 'สมชาย', 'ใจดี', '0812345678', 'somchai', 'pass1234'),
+(2, 'วิภา', 'สุขสันต์', '0898765432', 'wipa', 'wipa2025'),
+(3, 'John', 'Doe', '0991122334', 'johnd', 'securepwd');
 
 -- --------------------------------------------------------
 
@@ -46,15 +70,62 @@ INSERT INTO `employees` (`emp_id`, `full_name`, `department`, `salary`, `active`
 ('EMP003', 'อนันต์ สุขใจ', 'การตลาด', '25000.00', 0, '2026-01-18 10:25:50'),
 ('EMP004', 'สุดา พรมดี', 'ทรัพยากรบุคคล', '32000.00', 1, '2026-01-18 10:25:50');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `type`
+--
+
+CREATE TABLE `type` (
+  `type_id` int(11) NOT NULL,
+  `type_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `type`
+--
+
+INSERT INTO `type` (`type_id`, `type_name`) VALUES
+(1, 'เครื่องใช้ไฟฟ้า'),
+(2, 'เครื่องเขียน');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`customer_id`);
 
 --
 -- Indexes for table `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`emp_id`);
+
+--
+-- Indexes for table `type`
+--
+ALTER TABLE `type`
+  ADD PRIMARY KEY (`type_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `type`
+--
+ALTER TABLE `type`
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
