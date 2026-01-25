@@ -1,14 +1,11 @@
 <template>
-  <div >
-    <!--
-  <nav>
+  <div>
+  <!-- <nav> 
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/contact">Contact</router-link>
-      
+    <router-link to="/about">About</router-link>|
+    <router-link to="/Contact">Contact</router-link>
   </nav>
   -->
-
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" >
   <div class="container">
     <a class="navbar-brand" href="/">Navbar</a>
@@ -21,26 +18,32 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/customer">Customer</a>
+          <a class="nav-link" href="/Customer">Customer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+          <a class="nav-link" href="/Contact">Contact</a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/Type">Type</a>
         </li>
-         <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/Employees">Employees</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Product_api">Product_api</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Product">Product</a>
+        </li> 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="Contact" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/product">Product</a></li>
+            <li><a class="dropdown-item" href="/product_api">Product_api</a></li>
+            <li><hr class="dropdown-divider"></li> 
+            <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -49,15 +52,13 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-light" type="submit">Search</button>
+        <button class="btn btn-warning" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-
   <router-view/>
-
-</div>
+  </div>
 </template>
 
 <style>
