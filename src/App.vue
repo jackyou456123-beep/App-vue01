@@ -18,6 +18,9 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/Type_crud">Type_crud</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/customer_crud">Customer_crud</a>
         </li>
         <li class="nav-item">
@@ -30,7 +33,7 @@
           <a class="nav-link" href="/Contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Type">Type</a>
+          
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/Employees">Employees</a>
@@ -50,6 +53,7 @@
             <li><a class="dropdown-item" href="/product_api">Product_api</a></li>
             <li><hr class="dropdown-divider"></li> 
             <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
+            <li><a class="dropdown-item" href="/Type">Type</a></li>
           </ul>
         </li>
         <li class="nav-item">
