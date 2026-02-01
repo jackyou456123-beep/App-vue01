@@ -51,6 +51,16 @@ const routes = [
     path: '/sh_product',
     name: 'sh_product',
     component: () => import( '../views/Sh_product.vue')
+  },
+   {
+    path: '/customer_crud',
+    name: 'customer_crud',
+    component: () => import( '../views/Customer_crud.vue')
+  },
+   {
+    path: '/employees_crud',
+    name: 'employees_crud',
+    component: () => import( '../views/Employee_crud.vue')
   }
   
   
