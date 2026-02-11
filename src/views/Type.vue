@@ -67,4 +67,8 @@ export default {
     };
   }
 };
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541

@@ -10,55 +10,68 @@ const routes = [
   {
     path: '/customer',
     name: 'customer',
-    component: () => import( '../views/Customer.vue')
+    component: () => import('../views/Customer.vue')
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import( '../views/Contact.vue')
+    component: () => import('../views/Contact.vue')
   },
-   {
+  {
     path: '/type',
     name: 'type',
-    component: () => import( '../views/Type.vue')
+    component: () => import('../views/Type.vue')
   },
-   {
+  {
     path: '/employees',
     name: 'employees',
-    component: () => import( '../views/Employees.vue')
+    component: () => import('../views/Employees.vue')
   },
-   {
+  {
     path: '/add_customer',
     name: 'add_customer',
-    component: () => import( '../views/Add_customer.vue')
+    component: () => import('../views/Add_customer.vue')
   },
-   {
+  {
     path: '/add_employees',
     name: 'add_employees',
-    component: () => import( '../views/Add_employees.vue')
+    component: () => import('../views/Add_employees.vue')
   },
-   {
+  {
     path: '/product',
     name: 'product',
-    component: () => import( '../views/Product.vue')
-  } ,
-   {
+    component: () => import('../views/Product.vue')
+  },
+  {
     path: '/product_api',
     name: 'product_api',
-    component: () => import( '../views/Product_api.vue')
-  } ,
-   {
+    component: () => import('../views/Product_api.vue')
+  },
+  {
     path: '/sh_product',
     name: 'sh_product',
-    component: () => import( '../views/Sh_product.vue')
-  } ,
-   {
+    component: () => import('../views/Sh_product.vue')
+  },
+  {
     path: '/sh_std',
     name: 'sh_std',
-    component: () => import( '../views/Sh_std.vue')
+    component: () => import('../views/sh_std.vue') // เช็คตัวพิมพ์ใหญ่เล็กให้ตรงไฟล์จริง
+  },
+  {
+    path: '/customer_crud',
+    name: 'customer_crud',
+    component: () => import('../views/Customer_crud.vue')
+  },
+  {
+    path: '/employees_crud',
+    name: 'employees_crud',
+    component: () => import('../views/Employee_crud.vue')
+  },
+  {
+    path: '/type_crud',
+    name: 'type_crud',
+    component: () => import('../views/Type_crud.vue')
   }
-   
-  
 ]
 
 const router = createRouter({

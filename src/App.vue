@@ -18,13 +18,29 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
+=======
+          <a class="nav-link" href="/Type_crud">Type_crud</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/customer_crud">Customer_crud</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Employees_crud">Employees_crud</a>
+        </li>
+        <li class="nav-item">
+>>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
           <a class="nav-link" href="/Customer">Customer</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/Contact">Contact</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link" href="/Type">Type</a>
+=======
+          
+>>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/Employees">Employees</a>
@@ -42,9 +58,15 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/product">Product</a></li>
             <li><a class="dropdown-item" href="/product_api">Product_api</a></li>
+<<<<<<< HEAD
             <li><a class="dropdown-item" href="/sh_std">Sh_std</a></li>
             <li><hr class="dropdown-divider"></li> 
             <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
+=======
+            <li><hr class="dropdown-divider"></li> 
+            <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
+            <li><a class="dropdown-item" href="/Type">Type</a></li>
+>>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
           </ul>
         </li>
         <li class="nav-item">

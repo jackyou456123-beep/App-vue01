@@ -12,3 +12,25 @@ window.bootstrap = bootstrap; // ✅ ผูกเข้ากับ global windo
 
 
 createApp(App).use(store).use(router).mount('#app')
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
