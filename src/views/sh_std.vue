@@ -126,8 +126,6 @@ export default {
         last_name: "",
         phone: "",
         email: ""
-
-        
       };
       editModal.show();
     };
