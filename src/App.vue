@@ -42,7 +42,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/product">Product</a></li>
             <li><a class="dropdown-item" href="/product_api">Product_api</a></li>
-            <li><a class="dropdown-item" href="/sh_std">sh_std</a></li>
+            <li><a class="dropdown-item" href="/sh_std">Sh_std</a></li>
             <li><hr class="dropdown-divider"></li> 
             <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
           </ul>

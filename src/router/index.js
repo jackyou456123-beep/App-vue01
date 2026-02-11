@@ -51,13 +51,13 @@ const routes = [
     path: '/sh_product',
     name: 'sh_product',
     component: () => import( '../views/Sh_product.vue')
-  },
+  } ,
    {
-    path: '/sh_product',
-    name: 'sh_product',
-    component: () => import( '../views/Sh_product.vue')
+    path: '/sh_std',
+    name: 'sh_std',
+    component: () => import( '../views/Sh_std.vue')
   }
-  
+   
   
 ]
 
