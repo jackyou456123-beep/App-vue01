@@ -7,10 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-<<<<<<< HEAD
+
     "axios": "^1.13.5",
-=======
->>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
+
     "bootstrap": "^5.3.8",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
