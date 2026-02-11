@@ -1,9 +1,8 @@
 <template>
-
   <div class="container mt-4">
     <h2 class="mb-3">รายการประเภทสินค้า</h2>
-    
-    <!-- ตารางแสดงข้อมูลลูกค้า -->
+
+    <!-- ตารางแสดงข้อมูลประเภทสินค้า -->
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
         <tr>
@@ -12,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-          <tr v-for="type in types" :key="type.type_id">
+        <tr v-for="type in types" :key="type.type_id">
           <td>{{ type.type_id }}</td>
           <td>{{ type.type_name }}</td>
         </tr>
@@ -41,13 +40,16 @@ export default {
     const loading = ref(true);
     const error = ref(null);
 
-    // ฟังก์ชันดึงข้อมูลจาก API
     const fetchTypes = async () => {
       try {
-        const response = await fetch("http://localhost/App-vue01/php_api/show_type.php");
+        const response = await fetch(
+          "http://localhost/App-vue01/php_api/show_type.php"
+        );
+
         if (!response.ok) {
           throw new Error("ไม่สามารถดึงข้อมูลได้");
         }
+
         types.value = await response.json();
       } catch (err) {
         error.value = err.message;
@@ -63,12 +65,8 @@ export default {
     return {
       types,
       loading,
-      error
+      error,
     };
-  }
+  },
 };
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> 1a3ebb293908ec3525d007c89ae6009c5fdff541
