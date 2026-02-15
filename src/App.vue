@@ -56,6 +56,7 @@
 
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/Employees_crud">Employees_curd</a></li>
+              <li><a class="dropdown-item" href="/employee_crud2">Employees_curd2</a></li>
               <li><a class="dropdown-item" href="/product">Product</a></li>
               <li><a class="dropdown-item" href="/product_api">Product_api</a></li>
               <li><a class="dropdown-item" href="/sh_std">Sh_std</a></li>
