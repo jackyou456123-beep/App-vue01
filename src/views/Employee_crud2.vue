@@ -32,7 +32,7 @@
           <td>
             <img
               v-if="emp.image"
-              :src="'http://127.0.0.1/App-vue01/php_api/update/' + emp.image"
+              :src="'http://127.0.0.1/App-vue01/php_api/uploads/' + emp.image"
               width="100"
             />
           </td>
@@ -130,7 +130,7 @@
                 <div v-if="isEditMode && editForm.image" class="mt-2">
                   <p>รูปเดิม:</p>
                   <img
-                    :src="'http://127.0.0.1/App-vue01/php_api/update/' + editForm.image"
+                    :src="'http://127.0.0.1/App-vue01/php_api/uploads/' + editForm.image"
                     width="100"
                   />
                 </div>
