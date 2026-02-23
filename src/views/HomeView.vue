@@ -53,9 +53,10 @@
 
             <div class="card-footer bg-white border-0">
 
+              <!-- ปุ่มดูรายละเอียด (แก้ไขแล้ว) -->
               <router-link 
-                :to="'/ProductDetail?id=' + product.product_id"
                 class="btn btn-sm btn-outline-primary w-100 mb-2"
+                :to="`/product-detail/${product.product_id}`"
               >
                 ดูรายละเอียด
               </router-link>

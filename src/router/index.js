@@ -66,7 +66,7 @@ const routes = [
     path: '/sh_std',
     name: 'sh_std',
     component: () => import('../views/sh_std.vue'),
-    meta: { requiresAuth: true } // เช็คตัวพิมพ์ใหญ่เล็กให้ตรงไฟล์จริง
+    meta: { requiresAuth: true }
   },
   {
     path: '/customer_crud',
@@ -74,7 +74,6 @@ const routes = [
     component: () => import('../views/Customer_crud.vue'),
     meta: { requiresAuth: true }
   },
-
   {
     path: '/employees_crud',
     name: 'employees_crud',
@@ -102,16 +101,17 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/Login.vue'),
-   
+    component: () => import('../views/Login.vue')
   },
+
+  /* 🔥 แก้ไขตรงนี้ */
   {
-    path: '/productDetail',
+    path: '/product-detail/:id',
     name: 'productDetail',
-    component: () => import('../views/ProductDetail.vue')
-   
+    component: () => import('../views/ProductDetail.vue'),
+    meta: { requiresAuth: true }
   }
-  
+
 ]
 
 const router = createRouter({
@@ -124,18 +124,15 @@ router.beforeEach((to, from, next) => {
 
   const isLoggedIn = localStorage.getItem("adminLogin")
 
-  // ถ้าหน้านั้นต้อง login แต่ยังไม่ login
-  if (to.meta.requiresAuth && !isLoggedIn) {
+  if (to.meta && to.meta.requiresAuth && !isLoggedIn) {
     next('/login')
   } 
-  // ถ้า login แล้วแต่พยายามเข้าหน้า login
   else if (to.path === '/login' && isLoggedIn) {
-    next('/')   // หรือ dashboard
+    next('/')
   }
   else {
     next()
   }
 })
-
 
 export default router
