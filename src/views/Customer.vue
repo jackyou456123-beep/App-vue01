@@ -1,9 +1,13 @@
 <template>
   <div class="container mt-4">
     <h2 class="mb-3">รายชื่อลูกค้า</h2>
-  <div class="mb-3 ">
-     <a class="btn btn-primary" href="/add_customer" role="button">Add +</a>
-  </div>   
+
+  <div class="mb-3">
+      <button class="btn btn-primary" @click="openAddModal">
+        Add  <i class="bi bi-plus-circle"></i>
+      </button>
+    </div>   
+
     <!-- ตารางแสดงข้อมูลลูกค้า -->
     <table class="table table-bordered table-striped">
       <thead class="table-dark">

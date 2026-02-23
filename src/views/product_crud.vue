@@ -3,8 +3,10 @@
       <h2 class="mb-3">รายการสินค้า</h2>
   
       <div class="mb-3">
-        <button class="btn btn-primary" @click="openAddModal"><i class="bi bi-plus-circle"></i> Add </button>
-      </div>
+      <button class="btn btn-primary" @click="openAddModal">
+        Add  <i class="bi bi-plus-circle"></i>
+      </button>
+    </div>
   
       <table class="table table-bordered table-striped">
         <thead class="table-primary">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2026 at 10:27 AM
+-- Generation Time: Feb 23, 2026 at 10:58 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -69,7 +69,8 @@ INSERT INTO `customers` (`customer_id`, `firstName`, `lastName`, `phone`, `usern
 (00000006, 'มานะ', 'เด็กดี', '038756921', 'mana', '1234'),
 (00000007, 'มานี', 'ใจดี', '038756901', 'manees', '1234'),
 (00000009, 'awdawd', 'awdawd', '00000', 'adad', '$2y$10$bdq5g2r2xH3iZgDsOR6bB.RPbwVQ/JWQ/R3AGHP7QwU2PaaDAtOEC'),
-(00000010, 'awdawda', 'awdawd', '0000', 'adadad', '$2y$10$39ZY.tTkDwrkr17uL5tgDuBzQ/Z6Ug2h5OYupBohhjwTkKrhE9T8S');
+(00000010, 'awdawda', 'awdawd', '0000', 'adadad', '$2y$10$39ZY.tTkDwrkr17uL5tgDuBzQ/Z6Ug2h5OYupBohhjwTkKrhE9T8S'),
+(00000011, 'มานะ', 'ขยัน', '0000000000', 'admin', '$2y$10$0annJvFxDrHjhNhvbuRmt.o5ljFdNcEsaQAKtUFUNYjGz2pKxflDi');
 
 -- --------------------------------------------------------
 
@@ -92,7 +93,6 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`emp_id`, `full_name`, `department`, `salary`, `active`, `image`, `created_at`) VALUES
-(0000000001, 'สมชาย ใจดี', 'เทคโนโลยี', '35000.00', 1, '1771834297_5.png', '2026-01-18 10:24:11'),
 (0000000003, 'อนันต์ สุขใจ', 'บุคคล', '25000.00', 0, '1771834292_4.png', '2026-01-18 10:24:11'),
 (0000000004, 'สุดา พรมดี', 'ทรัพยากรบุคคล', '32000.00', 1, '1771834288_3.png', '2026-01-18 10:24:11'),
 (0000000006, 'ddds', 'ทรัพยากรบุคคล', '969696.00', 1, '1771834283_2.png', '2026-01-25 10:34:56'),
@@ -123,8 +123,11 @@ INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `i
 (00000000004, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย', '199.00', '11.png', 50, 1, '2026-01-25 11:48:08'),
 (00000000005, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', '799.00', '22.png', 30, 2, '2026-01-25 11:48:08'),
 (00000000006, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1299.00', '33.png', 30, 3, '2026-01-25 11:48:08'),
-(00000000007, 'hoodie', 'hoodie', '1300.00', '44.png', 100, 4, '2026-02-15 08:36:22'),
-(00000000013, 'เสื้อ', 'ฟไกฟไก', '1999.00', '1771835770_55.png', 1, 2, '2026-02-23 08:36:10');
+(00000000007, 'Hoodie', 'Hoodie', '1300.00', '1771839963_Screenshot 2026-02-23 164502.png', 100, 2, '2026-02-15 08:36:22'),
+(00000000013, 'เสื้อ', 'ฟไกฟไก', '1999.00', '1771835770_55.png', 1, 2, '2026-02-23 08:36:10'),
+(00000000015, 'เสื้อกันหนาว', 'กันได้จริง', '1499.00', '1771839986_44.png', 1, 2, '2026-02-23 09:45:39'),
+(00000000016, 'เสื้อกันหนาว', 'กันได้จริง', '1499.00', '1771840117_Screenshot 2026-02-23 164744.png', 1, 2, '2026-02-23 09:48:37'),
+(00000000017, 'เสื้อยืด', 'ยืดจริง', '999.00', '1771840187_Screenshot 2026-02-23 164920.png', 1, 2, '2026-02-23 09:49:47');
 
 -- --------------------------------------------------------
 
@@ -226,7 +229,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `customer_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -238,7 +241,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `student`

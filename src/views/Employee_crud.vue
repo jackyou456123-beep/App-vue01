@@ -4,7 +4,7 @@
     
     <div class="mb-3">
       <button class="btn btn-primary" @click="openAddModal">
-        Add + <i class="bi bi-plus-circle"></i>
+        Add  <i class="bi bi-plus-circle"></i>
       </button>
     </div>
 

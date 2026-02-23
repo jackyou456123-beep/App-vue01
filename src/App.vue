@@ -22,13 +22,31 @@
           </li>
 
           
-          <li class="nav-item">
-            <a class="nav-link" href="/Customer">Customer</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/Customer_crud">Customer curd</a>
-          </li>
+          <li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle" 
+    href="#" 
+    id="productDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Customer
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <router-link class="dropdown-item" to="/Customer">
+        Customer
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/Customer_crud">
+        Customer_crud
+      </router-link>
+    </li>
+    
+  </ul>
+</li>
 
           <li class="nav-item">
             <a class="nav-link" href="/Contact">Contact</a>   
@@ -38,18 +56,66 @@
             <a class="nav-link" href="/Type">Type</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/Employees">Employees</a>
-          </li>
+          <li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle" 
+    href="#" 
+    id="productDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Employees
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <router-link class="dropdown-item" to="/Employees">
+        Employees
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/Employees_crud">
+        Employees_crud
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/employee_crud2">
+        Employees_crud2
+      </router-link>
+    </li>
+  </ul>
+</li>
           
 
-          <li class="nav-item">
-            <a class="nav-link" href="/Product_api">Product_api</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/Product">Product</a>
-          </li>
+          <li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle" 
+    href="#" 
+    id="productDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Product
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <router-link class="dropdown-item" to="/product">
+        Product
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/product_api">
+        Product_api
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/product_crud">
+        Product_crud
+      </router-link>
+    </li>
+  </ul>
+</li>
 
           <!-- Dropdown -->
           <li class="nav-item dropdown">
@@ -61,12 +127,7 @@
             </a>
 
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/Employees_crud">Employees_curd</a></li>
-              <li><a class="dropdown-item" href="/employee_crud2">Employees_curd2</a></li>
-              <li><a class="dropdown-item" href="/product">Product</a></li>
-              <li><a class="dropdown-item" href="/product_api">Product_api2</a></li>
-              <li><a class="dropdown-item" href="/product_crud">product_crud</a></li>
-              <li><a class="dropdown-item" href="/sh_std">Sh_std</a></li>
+              <li><a class="dropdown-item" href="/sh_std">Sh_student</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
               <li><a class="dropdown-item" href="/Type_crud">Type_crud</a></li>
