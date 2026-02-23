@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
             $stock = $_POST['stock'];
             $category_id = $_POST['category_id'];
 
-            // อัพโหลดไฟล์รูป
             $filename = null;
             if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
                 $targetDir = "uploads/";
@@ -27,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
                 move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
             }
 
-            $sql = "INSERT INTO products (product_name, description, price, stock,category_id, image)
-                    VALUES (:product_name, :description, :price, :stock,:category_id, :image)";
+            $sql = "INSERT INTO products (product_name, description, price, stock, category_id, image)
+                    VALUES (:product_name, :description, :price, :stock, :category_id, :image)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':product_name', $product_name);
             $stmt->bindParam(':description', $description);
@@ -52,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
             $stock = $_POST['stock'];
             $category_id = $_POST['category_id'];
 
-            // อัพโหลดไฟล์รูป
             if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
                 $targetDir = "uploads/";
                 $filename = time() . '_' . basename($_FILES['image']['name']);
@@ -71,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
                         category_id = :category_id
                         $imageSQL
                     WHERE product_id = :product_id";
+
             $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(':product_name', $product_name);
@@ -79,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
             $stmt->bindParam(':stock', $stock);
             $stmt->bindParam(':category_id', $category_id);
             $stmt->bindParam(':product_id', $product_id);
-            if (isset($filename)) $stmt->bindParam(':image', $filename);
+
+            if (isset($filename)) {
+                $stmt->bindParam(':image', $filename);
+            }
 
             if ($stmt->execute()) {
                 echo json_encode(["message" => "แก้ไขสินค้าสำเร็จ"]);
@@ -92,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
             $product_id = $_POST['product_id'];
             $stmt = $conn->prepare("DELETE FROM products WHERE product_id = :product_id");
             $stmt->bindParam(':product_id', $product_id);
+
             if ($stmt->execute()) {
                 echo json_encode(["message" => "ลบสินค้าสำเร็จ"]);
             } else {
@@ -106,20 +109,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action) {
 
 } else {
 
-        // ประเภทสินค้า
     if (isset($_GET['type']) && $_GET['type'] == 'categories') {
-            // ดึงข้อมูลประเภทสินค้า
-            $stmt = $conn->prepare("SELECT * FROM categories");
-            $stmt->execute();
-            $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode(["success" => true, "data" => $categories]);
-        } else {
-            // แสดงข้อมูลสินค้าทั้งหมด
-            $stmt = $conn->prepare("SELECT pd.*, ct.category_name FROM products pd INNER JOIN categories ct ON pd.category_id = ct.category_id");
-            $stmt->execute();
-            $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo json_encode(["success" => true, "data" => $products]);
-        }
-        
+
+        $stmt = $conn->prepare("SELECT * FROM categories");
+        $stmt->execute();
+        $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo json_encode(["success" => true, "data" => $categories]);
+
+    } else {
+
+        // ✅ แก้ตรงนี้: INNER JOIN ➜ LEFT JOIN + COALESCE
+        $stmt = $conn->prepare("
+            SELECT pd.*, 
+                   COALESCE(ct.category_name, 'ไม่ระบุประเภท') AS category_name
+            FROM products pd
+            LEFT JOIN categories ct 
+            ON pd.category_id = ct.category_id
+        ");
+
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo json_encode(["success" => true, "data" => $products]);
     }
+}
 ?>

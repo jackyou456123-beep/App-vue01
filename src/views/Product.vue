@@ -29,7 +29,7 @@
           <td>{{ data.stock }}</td>
          <td>
         <img
-            :src="'http://localhost/APP-VUE01/php_api/image/' + data.image"
+            :src="'http://localhost/APP-VUE01/php_api/uploads/' + data.image"
             width="150"
             height="150" >
           </td>
@@ -59,14 +59,21 @@ export default {
     const loading = ref(true);
     const error = ref(null);
 
-    // ฟังก์ชันดึงข้อมูลจาก API
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost/APP-VUE01/php_api/show_product.php");
+
         if (!response.ok) {
           throw new Error("ไม่สามารถดึงข้อมูลได้");
         }
-        Alldata.value = await response.json();
+
+        const result = await response.json();
+
+        // ✅ เพราะ API ส่ง array ตรง ๆ
+        Alldata.value = result;
+
+        console.log("DATA =", Alldata.value);
+
       } catch (err) {
         error.value = err.message;
       } finally {

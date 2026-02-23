@@ -1,27 +1,29 @@
 <template>
   <div class="container mt-0">
 
-    <!-- ✅ Hero / Banner -->
+    <!-- Hero -->
     <div class="bg-light p-5 mb-4 shadow-sm rounded">
       <div class="container text-center">
         <h1 class="fw-bold">ยินดีต้อนรับสู่ร้านค้า DERNSAY SHOP</h1>
         <p class="text-muted">สินค้าคุณภาพ ราคาพิเศษ</p>
-        <a class="btn btn-primary" href="/sh_product" role="button">เลือกซื้อสินค้า</a>
+        <router-link to="/sh_product" class="btn btn-primary">
+          เลือกซื้อสินค้า
+        </router-link>
       </div>
     </div>
 
-    <!-- ✅ Loading -->
+    <!-- Loading -->
     <div v-if="loading" class="text-center my-5">
       <div class="spinner-border text-primary"></div>
       <p class="mt-3">กำลังโหลดสินค้า...</p>
     </div>
 
-    <!-- ✅ Error -->
+    <!-- Error -->
     <div v-else-if="error" class="alert alert-danger text-center">
       {{ error }}
     </div>
 
-    <!-- ✅ Product Section -->
+    <!-- Product -->
     <div v-else class="mb-5">
       <h3 class="mb-4 fw-bold">สินค้าแนะนำ</h3>
 
@@ -33,7 +35,6 @@
         >
           <div class="card h-100 shadow-sm">
 
-            <!-- ✅ รูปสินค้า -->
             <img 
               :src="getImage(product.image)" 
               class="card-img-top"
@@ -52,7 +53,6 @@
 
             <div class="card-footer bg-white border-0">
 
-              <!-- ✅ ปุ่ม Detail -->
               <router-link 
                 :to="'/ProductDetail?id=' + product.product_id"
                 class="btn btn-sm btn-outline-primary w-100 mb-2"
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <!-- ✅ Footer -->
+    <!-- Footer -->
     <footer class="text-center p-3 rounded" style="background-color: #afbfff;">
       <p class="mb-0">
         © 2026 ร้านค้าออนไลน์. สงวนลิขสิทธิ์.
@@ -91,7 +91,6 @@ export default {
     const loading = ref(true);
     const error = ref(null);
 
-    // ✅ สร้าง URL รูป
     const getImage = (image) => {
       if (!image) {
         return "https://via.placeholder.com/300x200?text=No+Image";
@@ -99,29 +98,24 @@ export default {
       return `http://localhost/App-vue01/php_api/uploads/${image}`;
     };
 
-    // ✅ Fetch Data
     const fetchData = async () => {
       try {
 
         const response = await fetch(
-          "http://localhost/App-vue01/php_api/show_product_home.php"
+          "http://localhost/App-vue01/php_api/api_product.php"
         );
-
-        if (!response.ok) {
-          throw new Error("โหลดข้อมูลสินค้าไม่ได้");
-        }
 
         const data = await response.json();
 
-        if (!data || data.length === 0) {
-          throw new Error("ไม่มีสินค้าในระบบ");
+        if (data.success) {
+          // แสดงแค่ 4 ตัวแรก
+          Alldata.value = data.data.slice(0, 4);
+        } else {
+          error.value = "โหลดข้อมูลไม่สำเร็จ";
         }
-
-        Alldata.value = data;
 
       } catch (err) {
         error.value = err.message;
-        console.error(err.message);
       } finally {
         loading.value = false;
       }

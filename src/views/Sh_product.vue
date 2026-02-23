@@ -12,7 +12,7 @@
         <div class="card shadow-sm mb-4">
           <!-- แสดงรูปสินค้า โดย path รูปมาจาก server -->
           <img
-             :src="'http://localhost/APP-VUE01/php_api/image/' + data.image"
+            :src="'http://localhost/App-vue01/php_api/uploads/' + data.image"
             width="70%"
             height="300"
             class="card-img-top"

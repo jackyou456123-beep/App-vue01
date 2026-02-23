@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-4 col-md-4 bg-body-secondary ">
     <h2 class="text-center mb-3">ลงทะเบียน</h2>
-    <form @submit.prevent="addData">
+    <form @submit.prevent="addCustomer">
       <div class="mb-2">
         <input v-model="customer.firstName" class="form-control" placeholder="ชื่อ" required />
       </div>
@@ -45,9 +45,9 @@ export default {
     };
   },
   methods: {
-    async addData() {
+    async addCustomer() {
       try {
-        const res = await fetch("http://localhost/APP-VUE01/php_api/add_customer.php", {
+        const res = await fetch("http://localhost/app-vue01/php_api/api_customer.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(this.customer)
@@ -57,9 +57,9 @@ export default {
 
         if (data.success) {
           // ✅ เคลียร์ข้อมูลใน textbox หลังบันทึกสำเร็จ
-          this.customer = { firstName: "", lastName: "", phone: "", username: "",password: ""};
+          this.customer = { firstName: "", lastName: "", phone: "", username: "", password: "" };
         }
-        
+
       } catch (err) {
         this.message = "เกิดข้อผิดพลาด: " + err.message;
       }
@@ -67,31 +67,3 @@ export default {
   }
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
