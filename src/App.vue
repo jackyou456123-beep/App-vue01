@@ -52,9 +52,32 @@
             <a class="nav-link" href="/Contact">Contact</a>   
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/Type">Type</a>
-          </li>
+
+          <li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle" 
+    href="#" 
+    id="productDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Type
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <router-link class="dropdown-item" to="/Type">
+        Type
+      </router-link>
+    </li>
+    <li>
+      <router-link class="dropdown-item" to="/Type_crud">
+        Type_crud
+      </router-link>
+    </li>
+    
+  </ul>
+</li>
 
           <li class="nav-item dropdown">
   <a 
@@ -130,12 +153,11 @@
               <li><a class="dropdown-item" href="/sh_std">Sh_student</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/sh_product">Show Product</a></li>
-              <li><a class="dropdown-item" href="/Type_crud">Type_crud</a></li>
             </ul>
           </li>
             
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link disabled"></a>
           </li>
 
         </ul>
